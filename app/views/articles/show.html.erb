@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @article.title %>
+  <h1><%= @article.title %></h1>
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @article.content %>
+  <%= markdown @article.content %>
 </p>
 
 

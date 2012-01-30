@@ -1,25 +1,9 @@
-<h1>Listing articles</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <h1><%= article.title %></h1>
+  <%= markdown article.content %>
+  <%= link_to 'Show', article %>
+  <%= link_to 'Edit', edit_article_path(article) %>
+  <%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %>
 <% end %>
-</table>
-
 <br />
-
 <%= link_to 'New Article', new_article_path %>
